@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#d8e2ff",
+              "primary-container": "#4a8eff",
+              "on-primary-fixed": "#001a41",
+              "on-secondary-container": "#a4b7cd",
+              "on-surface-variant": "#c1c6d7",
+              "on-tertiary-fixed-variant": "#41484b",
+              "primary-fixed-dim": "#adc7ff",
+              "on-primary-container": "#00285b",
+              "on-primary": "#002e68",
+              "outline": "#8b90a0",
+              "surface-container-low": "#1c1b1b",
+              "secondary-fixed-dim": "#b5c8df",
+              "on-error": "#690005",
+              "on-tertiary-container": "#242b2e",
+              "inverse-on-surface": "#313030",
+              "primary": "#adc7ff",
+              "surface-tint": "#adc7ff",
+              "surface-container-high": "#2a2a2a",
+              "on-tertiary": "#2b3135",
+              "on-surface": "#e5e2e1",
+              "tertiary-fixed-dim": "#c1c7cb",
+              "on-tertiary-fixed": "#161c20",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "on-secondary-fixed": "#091d2e",
+              "inverse-primary": "#005bc0",
+              "on-error-container": "#ffdad6",
+              "surface-container": "#201f1f",
+              "inverse-surface": "#e5e2e1",
+              "tertiary": "#c1c7cb",
+              "secondary-fixed": "#d1e4fb",
+              "surface-bright": "#393939",
+              "on-primary-fixed-variant": "#004493",
+              "surface-dim": "#131313",
+              "on-secondary-fixed-variant": "#36485b",
+              "secondary-container": "#36485b",
+              "outline-variant": "#414754",
+              "on-secondary": "#203243",
+              "secondary": "#b5c8df",
+              "surface-variant": "#353534",
+              "surface-container-highest": "#353534",
+              "surface": "#131313",
+              "tertiary-fixed": "#dde3e7",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-container": "#8b9295",
+              "on-background": "#e5e2e1",
+              "background": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #131313; color: #e5e2e1; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* CSS Infinity Symbol */
+        .infinity-symbol {
+            position: relative;
+            width: 212px;
+            height: 100px;
+            box-sizing: content-box;
+        }
+        .infinity-symbol:before,
+        .infinity-symbol:after {
+            content: "";
+            box-sizing: content-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border: 20px solid #adc7ff;
+            border-radius: 50px 50px 0 50px;
+            transform: rotate(-45deg);
+        }
+        .infinity-symbol:after {
+            left: auto;
+            right: 0;
+            border-radius: 50px 50px 50px 0;
+            transform: rotate(45deg);
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 60px rgba(173, 199, 255, 0.15);
+        }
+
+        .neural-mesh {
+            background-image: radial-gradient(circle at 2px 2px, rgba(173, 199, 255, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-[#414754]/15 shadow-[0_4px_20px_rgba(173,199,255,0.05)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold bg-gradient-to-br from-[#ADC7FF] to-[#4A8EFF] bg-clip-text text-transparent font-['Space_Grotesk'] tracking-tight">
+                VamxAI
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#ADC7FF]/60 hover:text-[#ADC7FF] transition-colors" href="#">Models</a>
+<a class="text-[#ADC7FF]/60 hover:text-[#ADC7FF] transition-colors" href="#">Directory</a>
+<a class="text-[#ADC7FF]/60 hover:text-[#ADC7FF] transition-colors" href="#">Nexus</a>
+<a class="text-[#ADC7FF] border-b-2 border-[#ADC7FF] pb-1" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-lg bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold hover:opacity-90 transition-all active:scale-95">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-20 neural-mesh">
+<!-- Hero Section: The Core Identity -->
+<section class="relative min-h-[819px] flex flex-col items-center justify-center px-6 overflow-hidden">
+<!-- Background Ambient Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/10 blur-[120px] rounded-full -z-10"></div>
+<div class="flex flex-col items-center text-center space-y-12">
+<!-- CSS Logo Construction -->
+<div class="p-16 bg-surface-container-lowest/50 backdrop-blur-md rounded-full border border-outline-variant/10 glow-effect">
+<div class="infinity-symbol scale-125 md:scale-150"></div>
+</div>
+<div class="space-y-4">
+<h1 class="text-7xl md:text-9xl font-headline font-bold tracking-tighter bg-gradient-to-b from-on-surface to-outline-variant bg-clip-text text-transparent">
+                        VamxAI
+                    </h1>
+<p class="text-primary-fixed-dim font-label tracking-[0.4em] uppercase text-sm">Neural Nexus Intelligence</p>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+<span class="text-[10px] tracking-widest uppercase text-outline">Framework Specs</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- Identity Blueprint Bento Grid -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- The Symbol: Geometric Specs -->
+<div class="md:col-span-7 bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-9xl">change_history</span>
+</div>
+<div class="relative z-10 space-y-8">
+<div>
+<span class="text-xs font-label tracking-widest text-primary uppercase">01 // Architecture</span>
+<h2 class="text-4xl font-headline font-bold mt-2">The Symbol</h2>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<p class="text-on-surface-variant leading-relaxed">
+                                    The VamxAI infinity loop is engineered using pure CSS primitives. It represents the infinite recursive nature of neural feedback loops.
+                                </p>
+<div class="flex items-center gap-4 text-xs font-mono text-outline">
+<span class="px-2 py-1 bg-surface-container-high rounded">border-radius: 50px</span>
+<span class="px-2 py-1 bg-surface-container-high rounded">rotate: 45deg</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/5">
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-[10px] uppercase text-outline">Primary Stroke</span>
+<span class="text-[10px] text-primary">#ADC7FF</span>
+</div>
+<div class="w-full h-1 bg-primary rounded-full"></div>
+<div class="flex justify-between items-center pt-2">
+<span class="text-[10px] uppercase text-outline">Glow Intensity</span>
+<span class="text-[10px] text-primary">15% Alpha</span>
+</div>
+<div class="w-full h-1 bg-primary-container/30 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Color Palette -->
+<div class="md:col-span-5 bg-surface-container-high p-8 rounded-xl border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<span class="text-xs font-label tracking-widest text-primary uppercase">02 // Chromatics</span>
+<h2 class="text-4xl font-headline font-bold mt-2 text-primary-fixed">Atmospheric Palette</h2>
+</div>
+<div class="grid grid-cols-3 h-32 mt-8 rounded-lg overflow-hidden">
+<div class="bg-primary flex items-end p-3 group hover:flex-[2] transition-all duration-500">
+<span class="text-[10px] text-on-primary font-bold rotate-90 origin-left mb-4 opacity-0 group-hover:opacity-100 transition-opacity">ELECTRIC</span>
+</div>
+<div class="bg-surface-container-lowest flex items-end p-3 group hover:flex-[2] transition-all duration-500 border-x border-outline-variant/10">
+<span class="text-[10px] text-primary font-bold rotate-90 origin-left mb-4 opacity-0 group-hover:opacity-100 transition-opacity">SLATE</span>
+</div>
+<div class="bg-tertiary flex items-end p-3 group hover:flex-[2] transition-all duration-500">
+<span class="text-[10px] text-on-tertiary font-bold rotate-90 origin-left mb-4 opacity-0 group-hover:opacity-100 transition-opacity">SILVER</span>
+</div>
+</div>
+</div>
+<!-- The Typeface: Typography -->
+<div class="md:col-span-12 bg-surface-container-low p-12 rounded-xl border border-outline-variant/10 flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2 space-y-6">
+<div>
+<span class="text-xs font-label tracking-widest text-primary uppercase">03 // Typography</span>
+<h2 class="text-4xl font-headline font-bold mt-2">The Typeface</h2>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                            VamxAI utilizes <span class="text-primary font-bold">Space Grotesk</span> for its high-tech, geometric precision. The wide tracking and tight vertical metrics create an editorial tech aesthetic that balances authority with innovation.
+                        </p>
+<div class="flex gap-4">
+<div class="px-4 py-2 bg-surface-container-highest rounded-lg border border-outline-variant/20">
+<span class="text-2xl font-headline font-light">Aa</span>
+</div>
+<div class="px-4 py-2 bg-surface-container-highest rounded-lg border border-outline-variant/20">
+<span class="text-2xl font-headline font-medium">Aa</span>
+</div>
+<div class="px-4 py-2 bg-surface-container-highest rounded-lg border border-outline-variant/20">
+<span class="text-2xl font-headline font-bold">Aa</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 flex items-center justify-center font-headline font-black text-[200px] select-none pointer-events-none">V</div>
+<div class="relative space-y-4">
+<div class="text-5xl font-headline font-bold tracking-tight">VamxAI Nexus</div>
+<div class="text-xl font-headline text-outline tracking-widest uppercase">The future is neural</div>
+<div class="pt-8 border-t border-outline-variant/10">
+<p class="font-body text-xs text-outline-variant leading-relaxed">
+                                    abcdefghijklmnopqrstuvwxyz<br/>
+                                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                                    1234567890 !@#$%^&amp;*()
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Adaptive Logo States -->
+<div class="md:col-span-6 bg-surface-container-high p-8 rounded-xl border border-outline-variant/10 group">
+<span class="text-xs font-label tracking-widest text-primary uppercase">04 // Scalability</span>
+<h2 class="text-3xl font-headline font-bold mt-2 mb-8">Responsive Lockups</h2>
+<div class="flex flex-col gap-12 items-center justify-center py-4">
+<div class="flex items-center gap-6">
+<div class="infinity-symbol scale-50 opacity-80"></div>
+<span class="text-2xl font-headline font-bold">VamxAI</span>
+</div>
+<div class="h-[1px] w-3/4 bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
+<div class="infinity-symbol scale-[0.3]"></div>
+</div>
+</div>
+<!-- Brand Motion Philosophy -->
+<div class="md:col-span-6 bg-[#0E0E0E] p-8 rounded-xl border border-outline-variant/10 flex flex-col justify-center text-center space-y-6">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">fluid</span>
+</div>
+<h3 class="text-2xl font-headline font-bold">Motion Philosophy</h3>
+<p class="text-on-surface-variant text-sm px-8">
+                        The "Neural Pulse" motion dictates that all interface elements enter with a cubic-bezier(0.16, 1, 0.3, 1) easing—simulating the speed and grace of light passing through fiber optics.
+                    </p>
+<button class="mx-auto px-6 py-2 border border-primary/20 text-primary text-xs uppercase tracking-widest hover:bg-primary/5 transition-all rounded-full">
+                        View Motion Kit
+                    </button>
+</div>
+</div>
+</section>
+<!-- Brand Asset Downloads -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+<div class="bg-gradient-to-br from-surface-container to-surface-container-low p-12 rounded-2xl border border-primary/10 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="space-y-2">
+<h2 class="text-3xl font-headline font-bold">Identity Deployment</h2>
+<p class="text-outline">Download high-fidelity assets and neural SVG primitives.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">download</span>
+<span class="font-bold">SVG Package</span>
+</button>
+<button class="flex items-center gap-3 px-8 py-4 bg-surface-container-highest rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">menu_book</span>
+<span class="font-bold">Brand Guidelines</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-[#414754]/10 bg-[#0E0E0E]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 w-full max-w-screen-2xl mx-auto gap-8">
+<div class="text-lg font-bold text-[#ADC7FF] font-headline">VamxAI</div>
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-[#ADC7FF]/40 text-center md:text-left">
+                © 2024 VamxAI. Neural Nexus Intelligence.
+            </div>
+<div class="flex gap-8 font-['Inter'] text-xs tracking-widest uppercase">
+<a class="text-[#ADC7FF]/40 hover:text-[#ADC7FF] transition-colors" href="#">Privacy</a>
+<a class="text-[#ADC7FF]/40 hover:text-[#ADC7FF] transition-colors" href="#">Terms</a>
+<a class="text-[#ADC7FF]/40 hover:text-[#ADC7FF] transition-colors" href="#">API</a>
+<a class="text-[#ADC7FF]/40 hover:text-[#ADC7FF] transition-colors" href="#">Status</a>
+</div>
+</div>
+</footer>
+</body></html>
